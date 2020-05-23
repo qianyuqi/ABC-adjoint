@@ -1,0 +1,43 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.2.x                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 2.2.x-1f35a0ff2a58
+Exec   : lighthillCostFunction
+Date   : Apr 14 2018
+Time   : 21:10:52
+Host   : "ubuntu"
+PID    : 29956
+Case   : /home/wang/OpenFOAM/wang-2.2.x/run/pressuredrop-20180415-o
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Disallowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 1000
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Initializing objective function calculation:
+The objective function chosen is:1
+Name of the patches for which the cost function will be calculated:
+2
+(
+inlet
+outlet
+)
+
+Number of patches:2
+Objective function power dissipated chosen.
+Objective function (Power dissipated) J: 0.000192179
+0.000192179

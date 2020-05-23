@@ -1,0 +1,104 @@
+/*-----------------------------------------------------------------------------------*\
+|                                                                                     | 
+|    ANSA_VERSION: 13.2.4                                                             | 
+|                                                                                     | 
+|    file created by  A N S A  Wed Apr 09 09:09:33 2014                               | 
+|                                                                                     | 
+|    Output from: C:/vcc/cae/backup/cfdcar3/ACOUSTICS/THESIS_2014/Box/ANSA/Box.ansa   | 
+|                                                                                     | 
+\*-----------------------------------------------------------------------------------*/
+
+
+
+FoamFile
+{
+	version 2.0;
+	format ascii;
+	class dictionary;
+	location "";
+	object controlDict;
+}
+/*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*/
+
+application UserSolver;
+
+//startFrom startTime;
+startFrom latestTime;
+
+startTime   0;
+
+stopAt endTime;
+
+endTime	 1000;
+
+deltaT 	1;
+
+writeControl timeStep;
+
+writeInterval	 1000;
+
+purgeWrite	2;
+
+writeFormat	ascii;
+
+writePrecision	6;
+
+writeCompression	uncompressed;
+
+timeFormat	general;
+
+timePrecision	6;
+
+graphFormat	raw;
+
+runTimeModifiable	yes;
+
+adjustTimeStep	off;
+
+maxCo	0.;
+
+maxDeltaT	0.;
+
+functions {
+	minMaxUa
+	{
+		type	fieldMinMax;
+		functionObjectLibs ( "libfieldFunctionObjects.so" );
+		enabled	true;
+		//outputControl outputTime;
+		outputControl timeStep;
+		outputInterval 1;
+		
+		fields
+		(
+			Ua
+		);
+	}
+    probes
+    {
+        type            probes;
+        functionObjectLibs ("libsampling.so");
+        enabled         true;
+        outputControl   timeStep;
+        outputInterval  1000;
+
+        fields
+        (
+            sensitivity
+        );
+
+        probeLocations
+        (
+(0.014 0.014043 0)
+(0.022 0.013820 0)
+(0.030 0.013126 0)
+(0.038 0.014090 0)
+(0.046 0.013079 0)
+
+        );
+
+    }
+}
+
+

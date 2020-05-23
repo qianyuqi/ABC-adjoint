@@ -1,0 +1,3 @@
+cellSet box new boxToCell (0.013 0.013 0) (0.03 0.0175 0.007)
+quit
+
